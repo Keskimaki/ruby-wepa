@@ -3,13 +3,6 @@ class Beer < ApplicationRecord
   has_many :ratings
 
   def average_rating
-    return 0 if ratings.empty?
-
-    score = 0
-    ratings.each do |rating|
-      score += rating.score
-    end
-
-    return score / ratings.count
+    ratings.empty? ? 0 : ratings.average(:score).round(2)
   end
 end
