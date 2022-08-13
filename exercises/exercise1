@@ -1,0 +1,133 @@
+Loading development environment (Rails 7.0.3.1)
+[1] pry(main)> Brewery.create name: "BrewDog"
+   (0.8ms)  SELECT sqlite_version(*)
+  TRANSACTION (0.1ms)  begin transaction
+  Brewery Create (0.4ms)  INSERT INTO "breweries" ("name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "BrewDog"], ["year", nil], ["created_at", "2022-08-13 12:41:49.320398"], ["updated_at", "2022-08-13 12:41:49.320398"]]
+  TRANSACTION (12.2ms)  commit transaction
+=> #<Brewery:0x00007f4895168b38
+ id: 5,
+ name: "BrewDog",
+ year: nil,
+ created_at: Sat, 13 Aug 2022 12:41:49.320398000 UTC +00:00,
+ updated_at: Sat, 13 Aug 2022 12:41:49.320398000 UTC +00:00>
+[2] pry(main)> Brewery.create name: "BrewDog" year: 2007
+SyntaxError: unexpected local variable or method, expecting end-of-input
+...ery.create name: "BrewDog" year: 2007
+...                           ^~~~
+[2] pry(main)> b = Brewey.last
+NameError: uninitialized constant Brewey
+
+b = Brewey.last
+    ^^^^^^
+Did you mean?  Brewery
+from (pry):2:in `__pry__'
+[3] pry(main)> b = Brewery.last
+  Brewery Load (0.3ms)  SELECT "breweries".* FROM "breweries" ORDER BY "breweries"."id" DESC LIMIT ?  [["LIMIT", 1]]
+=> #<Brewery:0x00007f4895425e48
+ id: 5,
+ name: "BrewDog",
+ year: nil,
+ created_at: Sat, 13 Aug 2022 12:41:49.320398000 UTC +00:00,
+ updated_at: Sat, 13 Aug 2022 12:41:49.320398000 UTC +00:00>
+[4] pry(main)> b
+=> #<Brewery:0x00007f4895425e48
+ id: 5,
+ name: "BrewDog",
+ year: nil,
+ created_at: Sat, 13 Aug 2022 12:41:49.320398000 UTC +00:00,
+ updated_at: Sat, 13 Aug 2022 12:41:49.320398000 UTC +00:00>
+[5] pry(main)> b.update year: 2007
+  TRANSACTION (0.1ms)  begin transaction
+  Brewery Update (0.2ms)  UPDATE "breweries" SET "year" = ?, "updated_at" = ? WHERE "breweries"."id" = ?  [["year", 2007], ["updated_at", "2022-08-13 12:42:30.190861"], ["id", 5]]
+  TRANSACTION (11.9ms)  commit transaction
+=> true
+[6] pry(main)> b
+=> #<Brewery:0x00007f4895425e48
+ id: 5,
+ name: "BrewDog",
+ year: 2007,
+ created_at: Sat, 13 Aug 2022 12:41:49.320398000 UTC +00:00,
+ updated_at: Sat, 13 Aug 2022 12:42:30.190861000 UTC +00:00>
+[7] pry(main)> b.beers.create name: "Punk IPA" style "IPA"
+SyntaxError: unexpected local variable or method, expecting end-of-input
+...s.create name: "Punk IPA" style "IPA"
+...                          ^~~~~
+[7] pry(main)> b.beers.create name: "Punk IPA", style "IPA"
+SyntaxError: unexpected string literal, expecting `do' or '{' or '('
+...reate name: "Punk IPA", style "IPA"
+...                              ^
+[7] pry(main)> b.beers.create name: "Punk IPA", style: "IPA"
+  TRANSACTION (0.1ms)  begin transaction
+  Beer Create (0.5ms)  INSERT INTO "beers" ("name", "style", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Punk IPA"], ["style", "IPA"], ["brewery_id", 5], ["created_at", "2022-08-13 12:43:05.015084"], ["updated_at", "2022-08-13 12:43:05.015084"]]
+  TRANSACTION (12.4ms)  commit transaction
+=> #<Beer:0x00007f4894c4b6a0
+ id: 9,
+ name: "Punk IPA",
+ style: "IPA",
+ brewery_id: 5,
+ created_at: Sat, 13 Aug 2022 12:43:05.015084000 UTC +00:00,
+ updated_at: Sat, 13 Aug 2022 12:43:05.015084000 UTC +00:00>
+[8] pry(main)> b.beers.create name: "Nanny State", style: "Iowalcohol"
+  TRANSACTION (0.1ms)  begin transaction
+  Beer Create (0.2ms)  INSERT INTO "beers" ("name", "style", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Nanny State"], ["style", "Iowalcohol"], ["brewery_id", 5], ["created_at", "2022-08-13 12:43:31.975610"], ["updated_at", "2022-08-13 12:43:31.975610"]]
+  TRANSACTION (12.5ms)  commit transaction
+=> #<Beer:0x00007f4894bfe468
+ id: 10,
+ name: "Nanny State",
+ style: "Iowalcohol",
+ brewery_id: 5,
+ created_at: Sat, 13 Aug 2022 12:43:31.975610000 UTC +00:00,
+ updated_at: Sat, 13 Aug 2022 12:43:31.975610000 UTC +00:00>
+[9] pry(main)> b.beers.first
+  Beer Load (0.3ms)  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = ? ORDER BY "beers"."id" ASC LIMIT ?  [["brewery_id", 5], ["LIMIT", 1]]
+=> #<Beer:0x00007f4894bd0540
+ id: 9,
+ name: "Punk IPA",
+ style: "IPA",
+ brewery_id: 5,
+ created_at: Sat, 13 Aug 2022 12:43:05.015084000 UTC +00:00,
+ updated_at: Sat, 13 Aug 2022 12:43:05.015084000 UTC +00:00>
+[10] pry(main)> b.beers.first.ratings.create score: 15
+  Beer Load (0.2ms)  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = ? ORDER BY "beers"."id" ASC LIMIT ?  [["brewery_id", 5], ["LIMIT", 1]]
+  TRANSACTION (0.1ms)  begin transaction
+  Rating Create (0.4ms)  INSERT INTO "ratings" ("score", "beer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["score", 15], ["beer_id", 9], ["created_at", "2022-08-13 12:44:02.667770"], ["updated_at", "2022-08-13 12:44:02.667770"]]
+  TRANSACTION (12.8ms)  commit transaction
+=> #<Rating:0x00007f4894b727b0
+ id: 4,
+ score: 15,
+ beer_id: 9,
+ created_at: Sat, 13 Aug 2022 12:44:02.667770000 UTC +00:00,
+ updated_at: Sat, 13 Aug 2022 12:44:02.667770000 UTC +00:00>
+[11] pry(main)> b.beers.first.ratings.create score: 21
+  Beer Load (0.2ms)  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = ? ORDER BY "beers"."id" ASC LIMIT ?  [["brewery_id", 5], ["LIMIT", 1]]
+  TRANSACTION (0.1ms)  begin transaction
+  Rating Create (0.3ms)  INSERT INTO "ratings" ("score", "beer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["score", 21], ["beer_id", 9], ["created_at", "2022-08-13 12:44:05.004493"], ["updated_at", "2022-08-13 12:44:05.004493"]]
+  TRANSACTION (13.1ms)  commit transaction
+=> #<Rating:0x00007f4894b30388
+ id: 5,
+ score: 21,
+ beer_id: 9,
+ created_at: Sat, 13 Aug 2022 12:44:05.004493000 UTC +00:00,
+ updated_at: Sat, 13 Aug 2022 12:44:05.004493000 UTC +00:00>
+[12] pry(main)> b.beers.last.ratings.create score: 3
+  Beer Load (0.3ms)  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = ? ORDER BY "beers"."id" DESC LIMIT ?  [["brewery_id", 5], ["LIMIT", 1]]
+  TRANSACTION (0.1ms)  begin transaction
+  Rating Create (0.4ms)  INSERT INTO "ratings" ("score", "beer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["score", 3], ["beer_id", 10], ["created_at", "2022-08-13 12:44:11.318920"], ["updated_at", "2022-08-13 12:44:11.318920"]]
+  TRANSACTION (12.5ms)  commit transaction
+=> #<Rating:0x00007f4894b05818
+ id: 6,
+ score: 3,
+ beer_id: 10,
+ created_at: Sat, 13 Aug 2022 12:44:11.318920000 UTC +00:00,
+ updated_at: Sat, 13 Aug 2022 12:44:11.318920000 UTC +00:00>
+[13] pry(main)> b.beers.last.ratings.create score: 45
+  Beer Load (0.2ms)  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = ? ORDER BY "beers"."id" DESC LIMIT ?  [["brewery_id", 5], ["LIMIT", 1]]
+  TRANSACTION (0.1ms)  begin transaction
+  Rating Create (0.4ms)  INSERT INTO "ratings" ("score", "beer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["score", 45], ["beer_id", 10], ["created_at", "2022-08-13 12:44:13.200718"], ["updated_at", "2022-08-13 12:44:13.200718"]]
+  TRANSACTION (13.1ms)  commit transaction
+=> #<Rating:0x00007f4894adb6a8
+ id: 7,
+ score: 45,
+ beer_id: 10,
+ created_at: Sat, 13 Aug 2022 12:44:13.200718000 UTC +00:00,
+ updated_at: Sat, 13 Aug 2022 12:44:13.200718000 UTC +00:00>
