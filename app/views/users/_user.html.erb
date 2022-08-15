@@ -4,4 +4,17 @@
     <%= user.username %>
   </p>
 
+  <p>
+    <%= user.ratings.count %> ratings given
+  </p>
+
+  <% user.ratings.each do |rating| %>
+    <%= render rating %>
+  <% end %>
+
+  <p>
+    <strong>Average rating:</strong>
+    <%= user.average_rating %>
+  </p>
+
 </div>
