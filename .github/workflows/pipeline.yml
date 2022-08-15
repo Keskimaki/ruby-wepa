@@ -18,4 +18,5 @@ jobs:
           bundler-cache: true
 
       - name: Lint
+        run: gem install rubocop
         run: rubocop
