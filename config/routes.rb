@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :breweries
   resources :ratings, only: [:index, :new, :create, :destroy]
 
+  get 'signup', to: 'users#new'
+
   root "breweries#index"
 end
