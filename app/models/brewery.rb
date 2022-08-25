@@ -6,8 +6,8 @@ class Brewery < ApplicationRecord
 
   validates :name, presence: true
   validates :year, numericality: { greater_than_or_equal_to: 1040,
-    less_than_or_equal_to: ->(_obj) { Date.current.year },
-    only_integer: true }
+                                   less_than_or_equal_to: ->(_obj) { Date.current.year },
+                                   only_integer: true }
 
   def print_report
     puts name
