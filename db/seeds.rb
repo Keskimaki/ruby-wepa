@@ -10,7 +10,7 @@ b2.beers.create name: "X Porter", style: "Porter"
 b3.beers.create name: "Hefeweizen", style: "Weizen"
 b3.beers.create name: "Helles", style: "Lager"
 
-u = User.create username: "admin"
+u = User.create username: "user", password: "Us3r", password_confirmation: "Us3r"
 
 u.ratings.create beer: b1.beers.first, score: 10
 u.ratings.create beer: b2.beers.first, score: 20
