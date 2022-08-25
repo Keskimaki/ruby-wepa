@@ -11,10 +11,12 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :username, style: "display: block" %>
+  <% if @user.new_record? %>
+    <div class="field">
+    <%= form.label :username %>
     <%= form.text_field :username %>
-  </div>
+    </div>
+  <% end %>
 
   <div>
     <%= form.label :password, style: "display: block"%>
