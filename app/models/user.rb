@@ -8,4 +8,7 @@ class User < ApplicationRecord
 
   validates :username, uniqueness: true,
     length: { minimum: 3, maximum: 30 }
+  validates :password, length: { minimum: 4 },
+    format: { with: /\d.*[A-Z]|[A-Z].*\d/,
+      message: "has to contain one number and one upper case letter" }
 end
