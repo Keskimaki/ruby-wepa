@@ -2,5 +2,5 @@
 
 ### Web-palvelinohjelmointi Ruby on Rails 2022
 
-App running on Heroku
-https://ratebeer2022.herokuapp.com/
+App running on Fly.io
+https://ratebeer2022.fly.dev/breweries
