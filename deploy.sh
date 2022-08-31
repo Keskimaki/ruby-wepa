@@ -1,3 +1,6 @@
-git push heroku main
+export FLYCTL_INSTALL="/home/$USER/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
-heroku run rails db:migrate
+fly deploy
+
+fly open
