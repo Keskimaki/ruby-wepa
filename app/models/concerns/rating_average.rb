@@ -2,6 +2,6 @@ module RatingAverage
   extend ActiveSupport::Concern
 
   def average_rating
-    ratings.empty? ? 0 : ratings.average(:score).round(2)
+    ratings.average(:score).to_f
   end
 end

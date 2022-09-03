@@ -74,7 +74,7 @@ class BreweriesController < ApplicationController
     admin_accounts = { "pekka" => "beer", "arto" => "foobar", "matti" => "ittam", "vilma" => "kangas" }
 
     authenticate_or_request_with_http_basic do |username, password|
-      raise "Invalid username or password" unless admin_accounts[username] == password
+      raise "Wrong username or password" unless password == admin_accounts[username]
 
       return true
     end
