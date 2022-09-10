@@ -16,6 +16,8 @@
   </ul>
 <% end %>
 
+<br>
+
 <% if @user.ratings.empty? %>
   Has not yet made ratings
 <% else %>
@@ -33,6 +35,11 @@
       </il>
     <% end %>
   </ul>
+<% end %>
+
+
+<% if @user.favorite_brewery %>
+  Favorite brewery is <%= @user.favorite_brewery.name %>
 <% end %>
 
 <% if @user == current_user %>
