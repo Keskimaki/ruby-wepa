@@ -14,4 +14,10 @@ class User < ApplicationRecord
 
   validates :password, length: { minimum: 4 },
                        format: { with: /\A[A-Z].*\d|\d.*[A-Z]\z/, message: "must include one upper case letter and number" }
+
+  def favorite_beer
+    return nil if ratings.empty?
+
+    ratings.order(score: :desc).limit(1).first.beer
+  end
 end
