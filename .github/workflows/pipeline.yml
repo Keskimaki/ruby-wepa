@@ -50,3 +50,16 @@ jobs:
 
       - name: Run tests
         run: bundle exec rspec
+
+  deploy:
+    runs-on: ubuntu-22.04
+    needs: [lint, test]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Deploy to fly.io
+        uses: superfly/flyctl-actions/setup-flyctl@master
+        run: flyctl deploy --remote-only
+        env:
+          FLYCTL_API_TOKEN: ${{ secrets.FLYCTL_API_TOKEN }}
