@@ -1,43 +1,43 @@
 {
   "RSpec": {
     "coverage": {
-      "/usr/src/app/app/helpers/application_helper.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/usr/src/app/app/helpers/beer_clubs_helper.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/helpers/beer_clubs_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/usr/src/app/app/helpers/beers_helper.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/helpers/beers_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/usr/src/app/app/helpers/breweries_helper.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/helpers/breweries_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/usr/src/app/app/helpers/memberships_helper.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/helpers/memberships_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/usr/src/app/app/helpers/users_helper.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/usr/src/app/app/models/beer.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/models/beer.rb": {
         "lines": [
           1,
           1,
@@ -61,14 +61,14 @@
           null
         ]
       },
-      "/usr/src/app/app/models/application_record.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/usr/src/app/app/models/concerns/rating_average.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/models/concerns/rating_average.rb": {
         "lines": [
           1,
           1,
@@ -79,7 +79,7 @@
           null
         ]
       },
-      "/usr/src/app/app/models/user.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -105,20 +105,168 @@
           null,
           null,
           1,
-          18,
+          20,
           null,
           21,
           null,
           null,
           1,
-          18,
+          20,
           null,
           25,
           null,
           null
         ]
       },
-      "/usr/src/app/app/models/brewery.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/controllers/sessions_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          9,
+          null,
+          9,
+          8,
+          8,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/miko/Repos/ruby/ratebeer/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          111,
+          null,
+          89,
+          null,
+          null,
+          1,
+          7,
+          null,
+          null
+        ]
+      },
+      "/home/miko/Repos/ruby/ratebeer/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          2,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          13,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/miko/Repos/ruby/ratebeer/app/models/membership.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/miko/Repos/ruby/ratebeer/app/models/beer_club.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/miko/Repos/ruby/ratebeer/app/models/rating.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/miko/Repos/ruby/ratebeer/app/models/brewery.rb": {
         "lines": [
           1,
           1,
@@ -137,8 +285,9 @@
           null
         ]
       },
-      "/usr/src/app/app/controllers/beers_controller.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/controllers/beers_controller.rb": {
         "lines": [
+          1,
           1,
           1,
           null,
@@ -220,32 +369,7 @@
           null
         ]
       },
-      "/usr/src/app/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          78,
-          null,
-          59,
-          null,
-          null
-        ]
-      },
-      "/usr/src/app/app/models/rating.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/usr/src/app/app/controllers/breweries_controller.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/controllers/breweries_controller.rb": {
         "lines": [
           1,
           1,
@@ -318,141 +442,14 @@
           1,
           0,
           null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
           null
         ]
       },
-      "/usr/src/app/app/controllers/sessions_controller.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/controllers/ratings_controller.rb": {
         "lines": [
           1,
           1,
           null,
-          null,
-          null,
-          1,
-          7,
-          null,
-          7,
-          6,
-          6,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          0,
-          null,
-          0,
-          null,
-          null
-        ]
-      },
-      "/usr/src/app/app/controllers/users_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          2,
-          1,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          11,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/usr/src/app/app/models/membership.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/usr/src/app/app/models/beer_club.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/usr/src/app/app/controllers/ratings_controller.rb": {
-        "lines": [
-          1,
           1,
           2,
           null,
@@ -482,7 +479,7 @@
           null
         ]
       },
-      "/usr/src/app/app/channels/application_cable/channel.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -492,7 +489,7 @@
         "branches": {
         }
       },
-      "/usr/src/app/app/channels/application_cable/connection.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -502,84 +499,7 @@
         "branches": {
         }
       },
-      "/usr/src/app/app/controllers/beer_clubs_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/usr/src/app/app/controllers/memberships_controller.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/controllers/beer_clubs_controller.rb": {
         "lines": [
           0,
           0,
@@ -606,6 +526,84 @@
           null,
           0,
           0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/miko/Repos/ruby/ratebeer/app/controllers/memberships_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
           0,
           null,
           0,
@@ -663,7 +661,7 @@
         "branches": {
         }
       },
-      "/usr/src/app/app/jobs/application_job.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/jobs/application_job.rb": {
         "lines": [
           0,
           null,
@@ -676,7 +674,7 @@
         "branches": {
         }
       },
-      "/usr/src/app/app/mailers/application_mailer.rb": {
+      "/home/miko/Repos/ruby/ratebeer/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -687,6 +685,6 @@
         }
       }
     },
-    "timestamp": 1662813634
+    "timestamp": 1662816489
   }
 }
