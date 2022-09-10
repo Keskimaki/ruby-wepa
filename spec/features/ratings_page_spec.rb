@@ -44,5 +44,13 @@ describe "Rating" do
 
       expect(page).to have_content "Has made 2 ratings with an average of 15.0"
     end
+
+    it "user can delete a rating" do
+      visit user_path(user)
+
+      expect{
+        page.all('button')[1].click
+      }.to change{Rating.count}.by(-1)
+    end
   end
 end
