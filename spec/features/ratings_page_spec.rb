@@ -52,5 +52,12 @@ describe "Rating" do
         page.all('button')[1].click
       }.to change{Rating.count}.by(-1)
     end
+
+    it "correct favorite brewery and style is shown" do
+      visit user_path(user)
+
+      expect(page).to have_content "Favorite brewery is Koff"
+      expect(page).to have_content "Favorite beer style is Lager"
+    end
   end
 end
