@@ -73,6 +73,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem 'rspec-rails', '~> 6.0.0.rc1'
+  gem 'factory_bot_rails'
 end
 
 group :production do
