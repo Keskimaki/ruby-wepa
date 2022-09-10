@@ -12,8 +12,8 @@ class BeersController < ApplicationController
 
   # GET /beers/new
   def new
+    @beer = Beer.new
     set_breweries_and_styles_for_template
-    @styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter", "Lowalcohol"]
   end
 
   # GET /beers/1/edit
