@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  BEERMAPPING_APIKEY: ${{ secrets.BEERMAPPING_APIKEY }}
+
 jobs:
   lint:
     runs-on: ubuntu-22.04
