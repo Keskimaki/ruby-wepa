@@ -66,6 +66,7 @@ Style/OpenStructUse:
 Naming/MethodParameterName:
   AllowedNames:
     - cn
+  MinNameLength: 2
 
 Metrics/BlockLength:
   Enabled: false

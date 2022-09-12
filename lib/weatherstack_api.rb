@@ -1,5 +1,7 @@
 class WeatherstackApi
   def self.weather_for(city)
+    return nil if city.empty?
+
     city = city.downcase
     Rails.cache.fetch("#{city}_weather", expires_in: 1.hour) { get_weather_for(city) }
   end
@@ -11,10 +13,9 @@ class WeatherstackApi
     weather = response.parsed_response["current"]
 
     return nil if weather.nil?
-  
+
     Weather.new(weather)
   end
-  
 
   def self.key
     return nil if Rails.env.test?
