@@ -13,7 +13,7 @@ class BeermappingApi
     return [] if places.is_a?(Hash) and places['id'].nil?
 
     places = [places] if places.is_a?(Hash)
-    places.map do | place |
+    places.map do |place|
       Place.new(place)
     end
   end
@@ -27,7 +27,7 @@ class BeermappingApi
     return [] if places.is_a?(Hash) and places['id'].nil?
 
     places = [places] if places.is_a?(Hash)
-    places.map do | place |
+    places.map do |place|
       Place.new(place)
     end
   end
@@ -35,6 +35,7 @@ class BeermappingApi
   def self.key
     return nil if Rails.env.test?
     raise 'BEERMAPPING_APIKEY env variable not defined' if ENV['BEERMAPPING_APIKEY'].nil?
+
     ENV.fetch('BEERMAPPING_APIKEY')
   end
 end
