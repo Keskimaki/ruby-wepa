@@ -1,3 +1,3 @@
 class Style < ApplicationRecord
-  has_many :ratings, dependent: :destroy
+  has_many :beers
 end
