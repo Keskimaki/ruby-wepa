@@ -4,13 +4,13 @@ include Helpers
 
 describe "Beer" do
   before :each do
+    FactoryBot.create(:brewery)
+    FactoryBot.create(:style)
     FactoryBot.create :user
     sign_in(username: "Pekka", password: "Foobar1")
   end
 
   it "is created when name given" do
-    FactoryBot.create(:brewery)
-
     visit new_beer_path
     fill_in('beer_name', with: 'Testbeer')
 
@@ -20,8 +20,6 @@ describe "Beer" do
   end
 
   it "is not created when invalid name is given" do
-    FactoryBot.create(:brewery)
-
     visit new_beer_path
     fill_in('beer_name', with: '')
 
