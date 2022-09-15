@@ -8,14 +8,14 @@ class BeersController < ApplicationController
   def index
     @order = params[:order] || 'name'
     return if request.format.html? && fragment_exist?("beerlist-#{@order}")
-  
+
     @beers = Beer.includes(:brewery, :style, :ratings).all
     @beers = case @order
-              when 'name' then @beers.sort_by(&:name)
-              when 'brewery' then @beers.sort_by{ |b| b.brewery.name }
-              when 'style' then @beers.sort_by{ |b| b.style.name }
-              when 'rating' then @beers.sort_by{ |b| -(b.average_rating || 0) }
-              end
+             when 'name' then @beers.sort_by(&:name)
+             when 'brewery' then @beers.sort_by{ |b| b.brewery.name }
+             when 'style' then @beers.sort_by{ |b| b.style.name }
+             when 'rating' then @beers.sort_by{ |b| -(b.average_rating || 0) }
+             end
   end
 
   # GET /beers/1 or /beers/1.json
@@ -90,9 +90,9 @@ class BeersController < ApplicationController
   end
 end
 
-  def clear_cache 
-    ["beerlist-name", "beerlist-brewery", "beerlist-style", "brewerylist"].each{ |f| expire_fragment(f) }
-  end
+def clear_cache
+  %w(beerlist-name beerlist-brewery beerlist-style brewerylist).each{ |f| expire_fragment(f) }
+end
 
 def set_breweries_and_styles_for_template
   @breweries = Brewery.all
