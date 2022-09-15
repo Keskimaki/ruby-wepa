@@ -5,7 +5,6 @@ describe "Breweries page" do
     visit breweries_path
     expect(page).to have_content 'Breweries'
     expect(page).to have_content 'Number of active breweries: 0'
-    expect(page).to have_content 'Number of retired breweries: 0'
 
   end
 
@@ -22,7 +21,6 @@ describe "Breweries page" do
 
     it "lists the breweries and their total number" do
       expect(page).to have_content "Number of active breweries: #{@breweries.count}"
-      expect(page).to have_content 'Number of retired breweries: 0'
       @breweries.each do |brewery_name|
         expect(page).to have_content brewery_name
       end
