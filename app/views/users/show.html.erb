@@ -31,7 +31,7 @@
 <% if @user.ratings.empty? %>
   Has not yet made ratings
 <% else %>
-  Has made <%= pluralize(@user.ratings.count, 'rating') %> with an average of <%= @user.average_rating %>
+  Has made <%= pluralize(@user.ratings.count, 'rating') %> with an average of <%= round(@user.average_rating) %>
     
   <h4>ratings</h4>
 

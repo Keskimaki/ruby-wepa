@@ -23,7 +23,7 @@ Total ratings: <%= @ratings.count %>
 <ul>
   <% @top_beers.each do |beer| %>
    <li>
-    <%= "#{beer.name} #{beer.average_rating}" %>
+    <%= "#{beer.name} #{round(beer.average_rating)}" %>
    </li>
  <% end %>
 </ul>
@@ -35,7 +35,7 @@ Total ratings: <%= @ratings.count %>
 <ul>
   <% @top_breweries.each do |brewery| %>
    <li>
-    <%= "#{brewery.name} #{brewery.average_rating}" %>
+    <%= "#{brewery.name} #{round(brewery.average_rating)}" %>
    </li>
  <% end %>
 </ul>
@@ -47,7 +47,7 @@ Total ratings: <%= @ratings.count %>
 <ul>
   <% @top_styles.each do |style| %>
    <li>
-    <%= "#{style.name} #{style.average_rating}" %>
+    <%= "#{style.name} #{round(style.average_rating)}" %>
    </li>
  <% end %>
 </ul>
