@@ -1,5 +1,6 @@
 class RatingsController < ApplicationController
   before_action :ensure_that_signed_in, except: [:index, :show]
+  before_action :clear_cache, only: [:create, :destroy]
 
   def index
     @ratings = Rating.all
@@ -32,5 +33,9 @@ class RatingsController < ApplicationController
     rating = Rating.find(params[:id])
     rating.delete if current_user == rating.user
     redirect_to ratings_path
+  end
+
+  def clear_cache
+    expire_fragment("brewerylist")
   end
 end

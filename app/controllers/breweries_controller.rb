@@ -2,6 +2,7 @@ class BreweriesController < ApplicationController
   before_action :ensure_that_signed_in, except: [:index, :show]
   before_action :set_brewery, only: %i[show edit update destroy]
   before_action :ensure_that_admin, only: [:destroy]
+  before_action :clear_cache, only: [:create, :update, :destroy]
 
   # GET /breweries or /breweries.json
   def index
@@ -72,6 +73,10 @@ class BreweriesController < ApplicationController
   end
 
   def list
+  end
+
+  def clear_cache
+    expire_fragment("brewerylist")
   end
 
   private
