@@ -1,5 +1,5 @@
 class BeersController < ApplicationController
-  before_action :ensure_that_signed_in, except: [:index, :show]
+  before_action :ensure_that_signed_in, except: [:index, :show, :list]
   before_action :set_beer, only: %i[show edit update destroy]
   before_action :ensure_that_admin, only: [:destroy]
 
@@ -61,6 +61,9 @@ class BeersController < ApplicationController
         format.json { render json: @beer.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def list
   end
 
   # DELETE /beers/1 or /beers/1.json
