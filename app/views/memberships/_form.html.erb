@@ -12,10 +12,10 @@
   <% end %>
 
   <div>
-    <%= form.select :beer_club_id, options_from_collection_for_select(@beer_clubs, :id, :name) %>
+    <%= form.select :beer_club_id, options_from_collection_for_select(@beer_clubs, :id, :name), {}, { :class => "form-select" } %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
