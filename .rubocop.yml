@@ -32,6 +32,9 @@ Style/FormatString:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Style/GuardClause:
+  Enabled: false
+
 Style/WordArray:
   Enabled: true
   MinSize: 3
@@ -66,7 +69,7 @@ Style/OpenStructUse:
 Naming/MethodParameterName:
   AllowedNames:
     - cn
-  MinNameLength: 2
+  MinNameLength: 1
 
 Metrics/BlockLength:
   Enabled: false

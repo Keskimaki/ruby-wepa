@@ -4,7 +4,7 @@ class Style < ApplicationRecord
   def average_rating
     return 0 if beers.empty?
 
-    beer_ratings = beers.map{ |beer| beer.average_rating }.select { |score| score > 0 }
+    beer_ratings = beers.map(&:average_rating).select { |score| score > 0 }
 
     return 0 if beer_ratings.empty?
 

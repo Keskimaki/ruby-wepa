@@ -16,7 +16,7 @@ class Beer < ApplicationRecord
   def average
     return 0 if ratings.empty?
 
-    ratings.map{ |rating| rating.score }.sum / ratings.count.to_f
+    ratings.map(&:score).sum / ratings.count.to_f
   end
 
   def self.top(n)
