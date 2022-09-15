@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
+  before_action :ensure_that_admin, only: [:toggle_closed]
 
   # GET /users or /users.json
   def index
@@ -56,6 +57,15 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: "User was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def toggle_closed
+    user = User.find(params[:id])
+    user.update_attribute :closed, (not user.closed)
+
+    new_status = user.closed? ? "closed" : "active"
+
+    redirect_to user, notice:"user status changed to #{new_status}"
   end
 
   private
