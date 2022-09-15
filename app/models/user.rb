@@ -32,4 +32,9 @@ class User < ApplicationRecord
 
     beers.group(:brewery).average(:score).max_by { |_, v| v }.first
   end
+
+  def self.top(n)
+    sorted_by_rating_in_desc_order = User.all.sort_by{ |b| -(b.ratings.count || 0) }
+    sorted_by_rating_in_desc_order.take(n)
+  end
 end

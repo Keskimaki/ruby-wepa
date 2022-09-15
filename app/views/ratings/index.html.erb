@@ -17,7 +17,7 @@ Total ratings: <%= @ratings.count %>
 </ul>
 
 <h3>
-  Top beers
+  Best beers
 </h3>
 
 <ul>
@@ -29,7 +29,7 @@ Total ratings: <%= @ratings.count %>
 </ul>
 
 <h3>
-  Top breweries
+  Best breweries
 </h3>
 
 <ul>
@@ -39,5 +39,29 @@ Total ratings: <%= @ratings.count %>
    </li>
  <% end %>
 </ul>
+
+<h3>
+  Best styles
+</h3>
+
+<ul>
+  <% @top_styles.each do |style| %>
+   <li>
+    <%= "#{style.name} #{style.average_rating}" %>
+   </li>
+ <% end %>
+</ul>
+
+<h3>
+  Most active users
+</h3>
+
+<ol>
+  <% @top_users.each do |user| %>
+   <li>
+    <%= "#{user.username} #{user.ratings.count} ratings" %>
+   </li>
+  <% end %>
+</ol>
 
 <%= link_to "New rating", new_rating_path, class:'btn btn-primary' if current_user %>
