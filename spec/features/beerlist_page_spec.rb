@@ -29,11 +29,4 @@ describe "Beerlist page" do
 
     expect(page).to have_content "Nikolai"
   end
-
-  it "shows the known breweries", js:true do
-    visit beerlist_path
-    find('#beertable').first('.tablerow')
-
-    
-  end
 end
