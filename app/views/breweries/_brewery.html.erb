@@ -1,42 +1,44 @@
-<div id="<%= dom_id brewery %>">
-  <h2>
-    <%= link_to brewery.name, brewery %>
-    <% if not brewery.active  %>
-      <span class="badge bg-secondary">retired</span>
-    <% end %>
-  </h2>
+<% cache brewery do %>
+  <div id="<%= dom_id brewery %>">
+    <h2>
+      <%= link_to brewery.name, brewery %>
+      <% if not brewery.active  %>
+        <span class="badge bg-secondary">retired</span>
+      <% end %>
+    </h2>
 
-  <p>
-    Established in <%= brewery.year %>
-  </p>
+    <p>
+      Established in <%= brewery.year %>
+    </p>
 
-  <p>
-    Beers count: <%= brewery.beers.count%>
-  </p>
+    <p>
+      Beers count: <%= brewery.beers.count%>
+    </p>
 
-  <table class="table table-striped table-hover">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Style</th>
-          <th>Rating</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% brewery.beers.each do |beer| %>
+    <table class="table table-striped table-hover">
+        <thead>
           <tr>
-            <td><%= link_to beer.name, beer %></td>
-            <td><%= link_to beer.style.name, beer.style %></td>
-            <td><%= round(beer.average_rating) %></td>
+            <th>Name</th>
+            <th>Style</th>
+            <th>Rating</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% brewery.beers.each do |beer| %>
+            <tr>
+              <td><%= link_to beer.name, beer %></td>
+              <td><%= link_to beer.style.name, beer.style %></td>
+              <td><%= round(beer.average_rating) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-  <% if brewery.ratings.empty? %>
-    brewery has not yet been rated!
-  <% else %>
-    Brewery has <%= pluralize(brewery.ratings.count, 'rating') %> with an average of <%= round(brewery.average_rating) %>
-  <% end %>
+    <% if brewery.ratings.empty? %>
+      brewery has not yet been rated!
+    <% else %>
+      Brewery has <%= pluralize(brewery.ratings.count, 'rating') %> with an average of <%= round(brewery.average_rating) %>
+    <% end %>
 
-</div>
+  </div>
+<% end %>
