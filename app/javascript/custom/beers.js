@@ -73,12 +73,12 @@ const beers = () => {
     .then((response) => response.json())
     .then(handleResponse);
 
-  var request = new XMLHttpRequest();
+  // var request = new XMLHttpRequest();
 
-  request.onload = handleResponse;
+  // request.onload = handleResponse;
 
-  request.open("get", "beers.json", true);
-  request.send();
+  // request.open("get", "beers.json", true);
+  // request.send();
 };
 
 export { beers };
