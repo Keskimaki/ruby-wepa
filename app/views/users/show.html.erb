@@ -40,17 +40,17 @@
       <li>
         <%= "#{rating.score} #{rating.beer.name}" %>
         <% if @user == current_user %>
-          <%= button_to 'delete', rating, method: :delete, form: { style: 'display:inline-block;',  data: { 'turbo-confirm': 'Are you sure?' } } %>
+          <%= button_to 'delete', rating, method: :delete, form: { style: 'display:inline-block;',  data: { 'turbo-confirm': 'Are you sure?' } }, class:'btn btn-danger' %>
         <% end %>
-      </il>
+      </li>
     <% end %>
   </ul>
 <% end %>
 
 <% if @user == current_user %>
   <div>
-    <%= link_to "Change password", edit_user_path(@user) %> |
+    <%= link_to "Change password", edit_user_path(@user), class:'btn btn-primary' %>
 
-    <%= button_to "Destroy this user", @user, method: :delete %>
+    <%= button_to "Destroy this user", @user, method: :delete, class:'btn btn-danger' %>
   </div>
 <% end %>
