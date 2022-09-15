@@ -30,6 +30,38 @@ BREWERIES.show = () => {
   });
 }
 
+BREWERIES.sortByName = () => {
+  BREWERIES.list.sort((a, b) => a.name.toUpperCase().localeCompare(b.name.toUpperCase()));
+};
+
+BREWERIES.sortByYear = () => {
+  BREWERIES.list.sort((a, b) => a.year < b.year);
+};
+
+BREWERIES.sortByBeerCount = () => {
+  BREWERIES.list.sort((a, b) => a.beers.count < b.beers.count);
+};
+
+const makeSortable = () => {
+  document.getElementById("name").addEventListener("click", (e) => {
+    e.preventDefault;
+    BREWERIES.sortByName();
+    BREWERIES.show();
+  });
+
+  document.getElementById("year").addEventListener("click", (e) => {
+    e.preventDefault;
+    BREWERIES.sortByYear();
+    BREWERIES.show();
+  });
+
+  document.getElementById("beercount").addEventListener("click", (e) => {
+    e.preventDefault;
+    BREWERIES.sortByBeerCount();
+    BREWERIES.show();
+  });
+}
+
 const getBreweries = async () => {
   const breweries = await fetch("breweries.json");
 
@@ -41,6 +73,7 @@ const breweries = async () => {
 
   const breweries = await getBreweries();
 
+  makeSortable()
   handleResponse(breweries)
 }
 
