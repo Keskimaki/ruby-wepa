@@ -37,4 +37,22 @@ describe "Beerlist page" do
     expect(find('table').find('tr:nth-child(3)')).to have_content 'Lechte Weisse'
     expect(find('table').find('tr:nth-child(4)')).to have_content 'Nikolai'
   end
+
+  it "beers can be sorted by style", js:true do
+    visit beerlist_path
+    find_by_id('style').click()
+
+    expect(find('table').find('tr:nth-child(2)')).to have_content "Lager"
+    expect(find('table').find('tr:nth-child(3)')).to have_content 'Rauchbier'
+    expect(find('table').find('tr:nth-child(4)')).to have_content 'Weizen'
+  end
+
+  it "beers can be sorted by brewery", js:true do
+    visit beerlist_path
+    find_by_id('brewery').click()
+
+    expect(find('table').find('tr:nth-child(2)')).to have_content "Ayinger"
+    expect(find('table').find('tr:nth-child(3)')).to have_content 'Koff'
+    expect(find('table').find('tr:nth-child(4)')).to have_content 'Schlenkerla'
+  end
 end
