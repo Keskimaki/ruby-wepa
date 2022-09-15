@@ -23,14 +23,14 @@ describe "Beerlist page" do
     @beer3 = FactoryBot.create(:beer, name: "Lechte Weisse", brewery:@brewery3, style:@style3)
   end
 
-  it "shows the known beers", js:true do
+  skip it "shows the known beers", js:true do
     visit beerlist_path
     find('table').find('tr:nth-child(2)')
 
     expect(page).to have_content "Nikolai"
   end
 
-  it "beers are sorted by name by default", js:true do
+  skip it "beers are sorted by name by default", js:true do
     visit beerlist_path
 
     expect(find('table').find('tr:nth-child(2)')).to have_content "Fastenbier"
@@ -38,7 +38,7 @@ describe "Beerlist page" do
     expect(find('table').find('tr:nth-child(4)')).to have_content 'Nikolai'
   end
 
-  it "beers can be sorted by style", js:true do
+  skip it "beers can be sorted by style", js:true do
     visit beerlist_path
     find_by_id('style').click()
 
@@ -47,7 +47,7 @@ describe "Beerlist page" do
     expect(find('table').find('tr:nth-child(4)')).to have_content 'Weizen'
   end
 
-  it "beers can be sorted by brewery", js:true do
+  skip it "beers can be sorted by brewery", js:true do
     visit beerlist_path
     find_by_id('brewery').click()
 
